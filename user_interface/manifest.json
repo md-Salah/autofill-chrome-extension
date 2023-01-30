@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Auto fill",
+    "version": "1.0.0",
+    "description": "Extension for auto filling your signup and singin information",
+    "author": "https://www.fiverr.com/salah_3652",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    
+    "action":{
+        "default_popup": "popup.html",
+        "default_title": "OTP Verifier"
+    },
+
+    "content_scripts": [
+        {
+          "matches": ["https://www.google.com/*"],
+          "js": ["jquery-3.6.1.min.js", "script.js"]
+        }
+      ]
+    
+}

@@ -1,0 +1,23 @@
+body {
+    padding: 1cm;
+    height: 30cm;
+    width: 10cm;
+    background-color: whitesmoke;
+}
+
+h4 {
+    padding-bottom: 15px;
+}
+
+.btn {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.row {
+    padding-bottom: 5px;
+}
+
+.anotherRow {
+    padding-bottom: 5px;
+}

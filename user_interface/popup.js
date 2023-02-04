@@ -27,7 +27,7 @@ submitBtn.addEventListener("click", (event) => {
   else if (lname.value == "") {
     validMsg.textContent = "Last Name is invalid";
   } 
-  else if (phoneNumber.value == "") {
+  else if (phoneNumber.value = "") {
     validMsg.textContent = "Phone Number is invalid";
   } 
   else if (email.value == "") {

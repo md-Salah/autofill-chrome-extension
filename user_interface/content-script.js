@@ -2,24 +2,30 @@
   function matchKeyword(input, keywords) {
     let flag = false;
     // console.log(input.placeholder, input.id, input.className, input.name, input.value);
-
-    if (keywords.some((k) => input.placeholder.includes(k))) flag = true;
-    else if (keywords.some((k) => input.id.includes(k))) flag = true;
-    else if (keywords.some((k) => input.className.includes(k))) flag = true;
-    else if (keywords.some((k) => input.name.includes(k))) flag = true;
-    else if (keywords.some((k) => input.value.includes(k))) flag = true;
+    
+    if (keywords.some((k) => input.placeholder.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
+    else if (keywords.some((k) => input.id.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
+    else if (keywords.some((k) => input.className.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
+    else if (keywords.some((k) => input.name.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
+    else if (keywords.some((k) => input.value.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
 
     return flag;
   }
 
   function fillForm(userInfo) {
     let inputs = document.querySelectorAll("input");
+    let textarea = document.querySelectorAll("textarea");
+    inputs = [...inputs, ...textarea]
+
+    // only lowercase letters withour space, special characters
     let keywords = {
       email: ["email"],
       password: ["password"],
-      fname: ["fname", "first name", "firstName"],
-      lname: ["lname", "last name", "lastName"],
-      phoneNumber: ["phoneNumber", "phone number"],
+      fname: ["fname", "firstname"],
+      lname: ["lname", "lastname"],
+      phoneNumber: ["mobile", "phone"],
+      fullName: ["fullname"],
+      address: ["address"],
     };
 
     inputs.forEach((input) => {
@@ -34,6 +40,12 @@
         input.value = userInfo.fname;
       else if (matchKeyword(input, keywords["lname"]))
         input.value = userInfo.lname;
+      else if (matchKeyword(input, keywords["fullName"]))
+        input.value =  userInfo.fname + ' ' + userInfo.lname;
+      else if (matchKeyword(input, keywords["phoneNumber"]))
+        input.value =  userInfo.phoneNumber;
+      else if (matchKeyword(input, keywords["address"]))
+        input.value =  userInfo.address;
       else console.log("No match");
     });
   }

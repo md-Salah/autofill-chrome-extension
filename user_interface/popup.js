@@ -1,5 +1,7 @@
 console.log("popup.js");
 
+const autofillActive = document.getElementById("autofillActive");
+
 const fname = document.getElementById("fname");
 const lname = document.getElementById("lname");
 const phoneNumber = document.getElementById("phoneNumber");
@@ -14,9 +16,10 @@ const resetBtn = document.getElementById("resetBtn");
 
 const validMsg = document.getElementById("validMsg");
 
-async function fetchData() {
+async function updateUI() {
   let { userInfo } = await chrome.storage.local.get(["userInfo"]);
-  if (!userInfo.length) {
+  if (Object.keys(userInfo).length) {
+    autofillActive.checked = userInfo.autofillActive;
     fname.value = userInfo.fname;
     lname.value = userInfo.lname;
     phoneNumber.value = userInfo.phoneNumber;
@@ -30,9 +33,8 @@ async function fetchData() {
       if (ele.value === userInfo.gender) ele.checked = true;
     });
   }
-  return userInfo;
 }
-fetchData();
+updateUI();
 
 
 if (submitBtn != null)
@@ -64,7 +66,8 @@ if (submitBtn != null)
     else {
       // Save this info to chrome local storage
 
-      let userInfo = {
+      let newUserInfo = {
+        autofillActive: autofillActive.checked,
         fname: fname.value,
         lname: lname.value,
         phoneNumber: phoneNumber.value,
@@ -77,16 +80,18 @@ if (submitBtn != null)
       };
 
       if (chrome != null)
-        await chrome.storage.local.set({ userInfo: userInfo }, () => {
+        await chrome.storage.local.set({ userInfo: newUserInfo }, () => {
           validMsg.style.color = "green";
           validMsg.textContent = "Your information is saved successfully";
-          console.log(userInfo);
+          console.log(newUserInfo);
         });
     }
   });
 
 if (resetBtn != null)
   resetBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
+
     if (chrome != null) {
       await chrome.storage.local.remove(["userInfo"], () => {
         var err = chrome.runtime.lastError;
@@ -96,3 +101,12 @@ if (resetBtn != null)
       });
     }
   });
+
+autofillActive.addEventListener("change", async(e) =>{
+  let { userInfo } = await chrome.storage.local.get(["userInfo"]);
+
+  let newUserInfo = {...userInfo, autofillActive: autofillActive.checked }
+  await chrome.storage.local.set({ userInfo: newUserInfo }, () => {
+    console.log(newUserInfo);
+  });
+})

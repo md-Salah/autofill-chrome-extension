@@ -24,7 +24,7 @@
       fname: ["fname", "firstname"],
       lname: ["lname", "lastname"],
       phoneNumber: ["mobile", "phone"],
-      fullName: ["fullname"],
+      fullName: ["fullname", "name"],
       address: ["address"],
     };
 
@@ -57,7 +57,10 @@
       // let userInfo = await chrome.storage.local.get(["userInfor"])
       console.log("userInfo: ", userInfo);
       // console.log(inputs)
-      fillForm(userInfo);
+      const form = document.getElementsByTagName('form');
+      if(form && userInfo.autofillActive){
+        fillForm(userInfo);
+      }
     }
   });
 })();

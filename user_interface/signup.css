@@ -1,28 +1,73 @@
 body {
-    padding: 1cm;
-    height: 30cm;
-    width: 10cm;
-    background-color: whitesmoke;
+  margin: 20px 20px;
+  padding: 0;
+  width: 25%;
+  background-color: whitesmoke;
 }
 
 h4 {
-    padding-bottom: 15px;
+  padding-bottom: 15px;
+  margin-left: 25px;
 }
 
 .btn {
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .row {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .anotherRow {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
-.first-btn{
-    margin-bottom: 20px;
-    text-align: center;
+.first-btn {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Navbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 5px 0 rgb(0 0 0 / 50%);
+  width: 100%;
+  height: 56px;
+  border-radius: 13px;
+  margin-bottom: 25px;
+}
+.icon {
+  width: 20%;
+}
+
+.icon h1 {
+  font-size: 1rem;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.first-btn {
+  font-size: 15px;
+  display: flex;
+  transition: 0.5s ease-in;
+  width: 80%;
+  padding-left: 72px;
+}
+
+.first-btn a:hover {
+  background-color: rgba(120, 120, 120, 0.759);
+  color: black;
+}
+
+.first-btn a {
+  padding: 0 8px;
+  background-color: black;
+  color: white;
+  height: 27px;
+  border-radius: 40px;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
 }

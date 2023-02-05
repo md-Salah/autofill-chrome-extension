@@ -71,3 +71,18 @@ h4 {
   text-align: center;
   text-decoration: none;
 }
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.otp-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    text-align: center;
+}
+#msg{
+    text-align: center;
+    margin-top: 10px;
+}

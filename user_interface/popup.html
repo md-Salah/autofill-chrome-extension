@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="signup.css">
 </head>
 
-<body>
+<body style="height: auto;">
     <div class="first-btn">
-            <a href="./popup.html" class="btn btn-primary col" style="width: 25%;">Home</a>
-            <a href="./otp_email.html" class="btn btn-primary col" style="width: 25%;">OTP</a>
-            <a href="./password_gen_ui.html" class="btn btn-primary col" style="width: 35%;">Pass Gen</a>
+        <a href="./popup.html" class="btn btn-primary col" style="width: 25%;">Home</a>
+        <a href="./otp_email.html" class="btn btn-primary col" style="width: 25%;">OTP</a>
+        <a href="./password_gen_ui.html" class="btn btn-primary col" style="width: 35%;">Pass Gen</a>
 
     </div>
     <form>
@@ -21,7 +21,7 @@
             <label class="form-check-label switch" for="flexSwitchCheckChecked">
                 <h4>Autofill My Information</h4>
             </label>
-            <input class="form-check-input-bg" type="checkbox" id="flexSwitchCheckChecked" unchecked>
+            <input class="form-check-input-bg" type="checkbox" id="flexSwitchCheckChecked" checked>
         </div>
 
         <div class="row anotherRow">
@@ -44,25 +44,25 @@
         </div>
 
 
-        <div class="row anotherRow">
-            <div class="col">
-                Gender
+        <div class="row anotherRow my-3">
+            <div class="form-check col fw-bold" id="gender">
+                Gender:
             </div>
-            <div class="form-check anotherRow col">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+            <div class="form-check col">
+                <input class="form-check-input" type="radio" name="gender" id="gender1" value="male">
+                <label class="form-check-label" for="gender1">
                     Male
                 </label>
             </div>
-            <div class="form-check anotherRow col ">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
+            <div class="form-check col">
+                <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">
+                <label class="form-check-label" for="gender2">
                     Female
                 </label>
             </div>
-            <div class="form-check anotherRow col">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault3">
+            <div class="form-check col">
+                <input class="form-check-input" type="radio" name="gender" id="gender3" value="other">
+                <label class="form-check-label" for="gender3">
                     Other
                 </label>
             </div>
@@ -88,8 +88,7 @@
 
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                placeholder="Enter email">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <!-- <div class="form-group">
@@ -100,12 +99,12 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div> -->
-        <div id="validMsg" class="row">
+        <div id="validMsg" class="row my-3 mx-1" style="color: red;">
         </div>
 
         <div class="row">
-            <button type="submit" id="submitBtn" class="btn btn-primary col" style="width: 40%;"></button>
-            <button type="reset" class="btn btn-danger col" style="width: 40%;">Reset</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary col" style="width: 40%;">Save</button>
+            <button type="reset" id="resetBtn" class="btn btn-danger col" style="width: 40%;">Reset</button>
         </div>
 
     </form>

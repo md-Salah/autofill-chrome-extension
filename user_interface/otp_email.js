@@ -1,14 +1,30 @@
+const emailInput = document.getElementById("emailInput");
+const passInput = document.getElementById("passInput");
+const lastEmail = document.getElementById("lastEmail");
+
+const msg = document.getElementById("msg");
+
+const saveCred = document.getElementById("saveCred");
+const clearBtn = document.getElementById("clearBtn");
+
+async function getUserInfo() {
+  let { userInfo } = await chrome.storage.local.get(["userInfo"]);
+  return userInfo
+}
+const userInfo = await getUserInfo();
+console.log(userInfo);
+
 //popup.html UI
-popupUI();
+// popupUI();
 
 //Tab execution
-if (document.title == "Official Website : Spain Visa") {
-  console.log("Running main Tab");
-  mainTab();
-} else if (document.title == "") {
-  console.log("Running activation Tab");
-  activationTab();
-}
+// if (document.title == "Official Website : Spain Visa") {
+//   console.log("Running main Tab");
+//   mainTab();
+// } else if (document.title == "") {
+//   console.log("Running activation Tab");
+//   activationTab();
+// }
 
 //Read email pass from local storage
 async function readStorage() {

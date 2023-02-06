@@ -62,14 +62,14 @@ h4 {
 }
 
 .first-btn a {
-  padding: 0 8px;
-  background-color: black;
-  color: white;
-  height: 27px;
-  border-radius: 40px;
-  margin-right: 10px;
-  text-align: center;
-  text-decoration: none;
+  padding: 0 5px;
+    background-color: black;
+    color: white;
+    height: 27px;
+    border-radius: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 4px;
 }
 
 .col{

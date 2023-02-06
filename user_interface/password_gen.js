@@ -1,4 +1,4 @@
-
+var pass = "";
 var passlen;
 var lowlen = document.getElementById("lowcaseNumber");
 var uplen = document.getElementById("upcaseNumber");
@@ -23,7 +23,7 @@ function genPassword() {
     var charSp = "!@#$%^&*(){}[]<>.,?/\|~_-;:";
     var passwordLength = passlen;
     var password = "";
-    var pass = "";
+    // var pass = "";
 
     // for (var i = 0; i < passwordLength; i++) {
 
@@ -92,6 +92,25 @@ function shuffleString(str) {
 }
 
 totalcnt();
+
+function copyToClipBoard() {
+
+    var copyText = pass;
+
+    navigator.clipboard.writeText(copyText);
+
+    if (copyText != "") {
+        document.getElementById("copied").innerHTML = "Copied!";
+
+        setTimeout(function () {
+            // Then we remove the text after 2 seconds.
+            document.getElementById('copied').innerHTML = "";
+        }, 1000);
+    }
+
+
+
+}
 
 oplowlen.innerHTML = lowlen.value;
 lowlen.oninput = function () {

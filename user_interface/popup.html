@@ -1,171 +1,127 @@
 <html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+
+<head>
+  <title>Autofill Extension</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="signup.css" />
-  </head>
+  <link rel="stylesheet" href="signup.css" />
+</head>
 
 <body style="height: auto;">
-    <div class="Navbar">
-        <div class="icon">
-          <h1>Auto Fill<br> Extension</h1>
-        </div>
-        <div class="first-btn">
-          <a href="./popup.html"
-            >Home</a
-          >
-          <a
-            href="./otp_email.html"
-           
-            >OTP</a
-          >
-          <a
-            href="./password_gen_ui.html"
-            
-            >Pass Gen</a
-          >
-        </div>
-      </div>
-    <form>
-        <div class="form-check form-switch">
-            <label class="form-check-label switch" for="autofillActive">
-                <h4>Autofill My Information</h4>
-            </label>
-            <input class="form-check-input-bg" type="checkbox" id="autofillActive" checked>
-        </div>
+  <div class="Navbar">
+    <div class="icon">
+      <h1>Auto Fill<br> Extension</h1>
+    </div>
+    <div class="first-btn">
+      <a href="./popup.html">Home</a>
+      <a href="./otp_email.html">OTP</a>
+      <a href="./password_gen_ui.html">Pass Gen</a>
+    </div>
+  </div>
+  <form>
+    <div class="form-check form-switch">
+      <label class="form-check-label switch" for="autofillActive">
+        <h4>Autofill My Information</h4>
+      </label>
+      <input class="form-check-input-bg" type="checkbox" id="autofillActive" checked>
+    </div>
 
-      <div class="row anotherRow">
+    <div class="row anotherRow">
+      <div class="col">
+        <label>First Name</label>
+        <input type="text" id="fname" class="form-control" placeholder="Enter First name" />
+      </div>
+      <div class="col">
+        <label>Last Name</label>
+        <input type="text" id="lname" class="form-control" placeholder="Enter Last name" />
+      </div>
+    </div>
+    <div class="anotherRow">
+      <label>Phone number</label>
+      <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Phone number" />
+    </div>
+    <div class="anotherRow">
+      <label>Date of Birth</label>
+      <input type="date" id="dob" class="form-control" placeholder="Date of Birth" />
+    </div>
+
+    <div class="row anotherRow my-3">
+      <div class="form-check col fw-bold" id="gender">
+        Gender:
+      </div>
+      <div class="form-check col">
+        <input class="form-check-input" type="radio" name="gender" id="gender1" value="male">
+        <label class="form-check-label" for="gender1">
+          Male
+        </label>
+      </div>
+      <div class="form-check col">
+        <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">
+        <label class="form-check-label" for="gender2">
+          Female
+        </label>
+      </div>
+      <div class="form-check col">
+        <input class="form-check-input" type="radio" name="gender" id="gender3" value="other">
+        <label class="form-check-label" for="gender3">
+          Other
+        </label>
+      </div>
+    </div>
+
+    <div class="anotherRow">
+      <div class="anotherRow">
+        <label>Address</label>
+        <input type="text" id="address" class="form-control" placeholder="Enter Your Detailed Address" />
+      </div>
+
+      <div class="row">
         <div class="col">
-          <label>First Name</label>
-          <input
-            type="text"
-            id="fname"
-            class="form-control"
-            placeholder="Enter First name"
-          />
+          <label>Division</label>
+          <input type="text" id="division" class="form-control" placeholder="Enter Division" />
         </div>
         <div class="col">
-          <label>Last Name</label>
-          <input
-            type="text"
-            id="lname"
-            class="form-control"
-            placeholder="Enter Last name"
-          />
+          <label>District</label>
+          <input type="text" id="district" class="form-control" placeholder="Enter District" />
         </div>
       </div>
-      <div class="anotherRow">
-        <label>Phone number</label>
-        <input
-          type="text"
-          id="phoneNumber"
-          class="form-control"
-          placeholder="Enter Phone number"
-        />
-      </div>
-      <div class="anotherRow">
-        <label>Date of Birth</label>
-        <input
-          type="date"
-          id="dob"
-          class="form-control"
-          placeholder="Date of Birth"
-        />
-      </div>
+    </div>
 
-        <div class="row anotherRow my-3">
-            <div class="form-check col fw-bold" id="gender">
-                Gender:
-            </div>
-            <div class="form-check col">
-                <input class="form-check-input" type="radio" name="gender" id="gender1" value="male">
-                <label class="form-check-label" for="gender1">
-                    Male
-                </label>
-            </div>
-            <div class="form-check col">
-                <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">
-                <label class="form-check-label" for="gender2">
-                    Female
-                </label>
-            </div>
-            <div class="form-check col">
-                <input class="form-check-input" type="radio" name="gender" id="gender3" value="other">
-                <label class="form-check-label" for="gender3">
-                    Other
-                </label>
-            </div>
-        </div>
-
-      <div class="anotherRow">
-        <div class="anotherRow">
-          <label>Address</label>
-          <input
-            type="text"
-            id="address"
-            class="form-control"
-            placeholder="Enter Your Detailed Address"
-          />
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <label>Division</label>
-            <input
-              type="text"
-              id="division"
-              class="form-control"
-              placeholder="Enter Division"
-            />
-          </div>
-          <div class="col">
-            <label>District</label>
-            <input
-              type="text"
-              id="district"
-              class="form-control"
-              placeholder="Enter District"
-            />
-          </div>
-        </div>
-      </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <!-- <div class="form-group">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <!-- <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div> -->
-      <!-- <div class="form-check">
+    <!-- <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div> -->
-        <div id="validMsg" class="row my-3 mx-1" style="color: red;">
-        </div>
+    <div id="validMsg" class="row my-3 mx-1" style="color: red;">
+    </div>
 
-        <div class="row">
-            <button type="submit" id="submitBtn" class="btn btn-primary col" style="width: 40%; align-items: center;">Save</button>
-            <button type="reset" id="resetBtn" class="btn btn-danger col" style="width: 40%;align-items: center;">Reset</button>
-        </div>
+    <div class="row">
+      <button type="submit" id="submitBtn" class="btn btn-primary col"
+        style="width: 40%; align-items: center;">Save</button>
+      <button type="reset" id="resetBtn" class="btn btn-danger col"
+        style="width: 40%;align-items: center;">Reset</button>
+    </div>
 
-    </form>
+  </form>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script> -->
-    <script src="./popup.js"></script>
-  </body>
+  <script src="./popup.js"></script>
+</body>
+
 </html>

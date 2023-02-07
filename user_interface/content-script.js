@@ -10,7 +10,7 @@
     else if (keywords.some((k) => input.className.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
     else if (keywords.some((k) => input.name.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
     else if (keywords.some((k) => input.value.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
-    else if (keywords.some((k) => label.textContent.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
+    else if (label && keywords.some((k) => label.textContent.toLowerCase().replace(/[^a-z]/g, "").includes(k))) flag = true;
 
     return flag;
   }

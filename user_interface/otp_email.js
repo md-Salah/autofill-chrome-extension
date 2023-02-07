@@ -16,6 +16,7 @@ async function getMailCred() {
 
 async function updateUI() {
   mailCred = await getMailCred();
+  // console.log(mailCred);
 
   if (mailCred) {
     emailInput.value = mailCred.email;
@@ -80,12 +81,15 @@ clearBtn.addEventListener("click", async(e) => {
 refresh.addEventListener("click", getRecentEmail);
 
 async function getRecentEmail(){
-  const mailCred = await getMailCred();
+  let mailCred = await getMailCred();
   // console.log(mailCred);
   if(mailCred){
     lastEmail.innerHTML = 'Loading...';
     const text = await fetchEmail(mailCred.email, window.atob(mailCred.pass))
     lastEmail.innerHTML = text;
+    
+    mailCred = {...mailCred, recentEmail:text}
+    await chrome.storage.local.set({ mailCred: mailCred });
   }
 }
 

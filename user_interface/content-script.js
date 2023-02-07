@@ -1,3 +1,4 @@
+
 (() => {
   function matchKeyword(input, keywords) {
     let flag = false;
@@ -28,7 +29,7 @@
     };
 
     if (matchKeyword(input, keywords["otp"]))
-      console.log("fill otp, matches otp box");
+      fillOTP(input);
     else if (input.type == "email") input.value = userInfo.email;
     else if (input.type == "password") {}
     else if (matchKeyword(input, keywords["email"]))
@@ -65,4 +66,35 @@
 
     }
   });
+
+  async function fillOTP(input){
+    console.log('filling OTP')
+    let { mailCred } = await chrome.storage.local.get(["mailCred"]);
+    // console.log(mailCred.recentEmail)
+
+    let mail = mailCred.recentEmail;
+    if(mail && mail.includes(window.location.hostname)){
+
+      const pattern = /(code|otp|OTP|Code|CODE)[a-zA-Z:\s]*[0-9]{1,6}\s/;
+      const otpPattern = /[0-9]{1,6}/;
+
+      let otp = ''
+
+      if(pattern.test(mail)){
+        
+        let result = mail.match(pattern)[0]
+
+        if(result){
+          otp = result.match(otpPattern)[0]
+          console.log('Your OTP is:', otp)
+
+          input.value = otp;
+        }
+      
+      }
+      else console.log("OTP pattern doesn't match:", mail)
+    }
+    else console.log('OTP code not received yet');
+
+  }
 })();

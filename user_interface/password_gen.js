@@ -93,24 +93,20 @@ function shuffleString(str) {
 
 totalcnt();
 
-function copyToClipBoard() {
+const copyToClipBoard = document.getElementById('copyToClipBoard')
+copyToClipBoard.addEventListener("click", ()=> {
 
-    var copyText = pass;
-
-    navigator.clipboard.writeText(copyText);
-
-    if (copyText != "") {
+    if (pass != "") {
+        navigator.clipboard.writeText(pass);
         document.getElementById("copied").innerHTML = "Copied!";
 
         setTimeout(function () {
-            // Then we remove the text after 2 seconds.
+            // Then we remove the text after 1 seconds.
             document.getElementById('copied').innerHTML = "";
         }, 1000);
     }
+})
 
-
-
-}
 
 oplowlen.innerHTML = lowlen.value;
 lowlen.oninput = function () {

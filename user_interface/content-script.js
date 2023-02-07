@@ -31,11 +31,10 @@
     inputs.forEach((input) => {
       // console.log(input);
       if (input.type == "email") input.value = userInfo.email;
-      else if (input.type == "password") input.value = "strong_password";
+      else if (input.type == "password") {}
       else if (matchKeyword(input, keywords["email"]))
         input.value = userInfo.email;
-      else if (matchKeyword(input, keywords["password"]))
-        input.value = "strong_password";
+      else if (matchKeyword(input, keywords["password"])) {}
       else if (matchKeyword(input, keywords["fname"]))
         input.value = userInfo.fname;
       else if (matchKeyword(input, keywords["lname"]))

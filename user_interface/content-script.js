@@ -67,6 +67,7 @@
     }
   });
 
+
   async function fillOTP(input){
     console.log('filling OTP')
     let { mailCred } = await chrome.storage.local.get(["mailCred"]);
@@ -92,9 +93,18 @@
         }
       
       }
-      else console.log("OTP pattern doesn't match:", mail)
+      else {
+        console.log("OTP pattern doesn't match:", mail)
+        const response = await chrome.runtime.sendMessage({type: 'MAIL_UPDATE'});
+        console.log(response);
+      }
     }
-    else console.log('OTP code not received yet');
+    else {
+      console.log('OTP code not received yet');
+      const response = await chrome.runtime.sendMessage({type: 'MAIL_UPDATE'});
+      console.log(response);
+    }
 
   }
+
 })();
